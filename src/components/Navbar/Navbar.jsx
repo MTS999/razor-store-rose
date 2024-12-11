@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 import logo from "../../assets/logo.png";
 import Icons from "../utilsComponenets/Icons";
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [select, setSelect] = useState("Home");
   const [search, setSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log(menuOpen);
+  // console.log(menuOpen);
 
   const handleClick = (e) => {
     // console.log(e.target.innerText);
@@ -27,9 +27,30 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
     setSearch(false);
   };
+
+  const [scrolled, setScrolled] = useState(false);
+console.log(scrolled);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className={`Navbar ${menuOpen?"black":""}`}>
+      <div className={`Navbar ${menuOpen?"black":""} ${scrolled ? "scrolled" : ""}`}>
         <div className="container navbar-container">
           <div className="logo">
             <img

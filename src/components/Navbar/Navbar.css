@@ -19,6 +19,7 @@
   align-content: center;
   position: sticky;
   top: 0;
+  /* border: 2px solid yellow; */
 }
 .navbar-container {
 
@@ -91,6 +92,11 @@
   cursor: pointer;
   color: white;
   display: none;
+}
+
+.scrolled {
+  background: #161616; /* Color after scrolling */
+  border-bottom: 1px solid gray;
 }
 
 @media (max-width: 1034px) {
