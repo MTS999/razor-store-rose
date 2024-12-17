@@ -46,7 +46,7 @@ console.log(scrolled);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, []); 
 
   return (
     <>

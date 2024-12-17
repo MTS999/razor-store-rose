@@ -5,8 +5,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
 
+}
+body{
+   font-family: sans-serif;
+}
 .container{
     width: 95%;
     /* border: 2px solid red; */
@@ -17,6 +20,11 @@
   padding: 9px;
   border: 1px solid gray;
   border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .display-none{
@@ -24,7 +32,7 @@
 }
 
 .green{
-  color: green;
+  color: #27f026;
 }
 
 @media (min-width: 768px){

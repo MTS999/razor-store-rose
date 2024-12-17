@@ -25,73 +25,77 @@ const Hero = () => {
   return (
     <>
       <div className="Hero">
-        <div className="container hero-container-1">
-          <div className="left-hero">
-            <h1>{select_product.name}</h1>
-            <p>{select_product.description}</p>
-            <Button text={"VIEW MORE"} />
-          </div>
+        <div className="hero-main-container">
+          <div className="container hero-container-1">
+            <div className="left-hero">
+              <h1>{select_product.name}</h1>
+              <div className="description">
 
-          <div className="right-hero">
-            <div className="img">
-              <img src={select_product.img} alt="" />
+              <p>{select_product.description}</p>
+              </div>
+              <Button text={"VIEW MORE"} />
+            </div>
+
+            <div className="right-hero">
+              <div className="img">
+                <img src={select_product.img} alt="" />
+              </div>
             </div>
           </div>
-        </div>
+          <div className="container hero-container-2">
+            <div className="dots">
+              <i
+                className={`nf nf-oct-dot_fill ${
+                  select_product.id == 0 ? "green" : ""
+                }`}
+                onClick={() => set_select_product(data[0])}
+              ></i>
+              <i
+                className={`nf nf-oct-dot_fill ${
+                  select_product.id == 1 ? "green" : ""
+                }`}
+                onClick={() => set_select_product(data[1])}
+              ></i>
+              <i
+                className={`nf nf-oct-dot_fill ${
+                  select_product.id == 2 ? "green" : ""
+                }`}
+                onClick={() => set_select_product(data[2])}
+              ></i>
+              <i
+                className={`nf nf-oct-dot_fill ${
+                  select_product.id == 3 ? "green" : ""
+                }`}
+                onClick={() => set_select_product(data[3])}
+              ></i>
+            </div>
 
-        <div className="container hero-container-2">
-          <div className="dots">
-            <i
-              className={`nf nf-oct-dot_fill ${
-                select_product.id == 0 ? "green" : ""
-              }`}
-              onClick={() => set_select_product(data[0])}
-            ></i>
-            <i
-              className={`nf nf-oct-dot_fill ${
-                select_product.id == 1 ? "green" : ""
-              }`}
-              onClick={() => set_select_product(data[1])}
-            ></i>
-            <i
-              className={`nf nf-oct-dot_fill ${
-                select_product.id == 2 ? "green" : ""
-              }`}
-              onClick={() => set_select_product(data[2])}
-            ></i>
-            <i
-              className={`nf nf-oct-dot_fill ${
-                select_product.id == 3 ? "green" : ""
-              }`}
-              onClick={() => set_select_product(data[3])}
-            ></i>
-          </div>
+            <div className="icon">
+              <i className="nf nf-fa-caret_down"></i>
+            </div>
 
-          <div className="icon">
-            <i className="nf nf-fa-caret_down"></i>
-          </div>
-
-          <div className={`social-media `}>
-            <div
-              className={`social-media-icons
+            <div className={`social-media `}>
+              <div
+                className={`social-media-icons
                ${!showShare ? "display-none-social-media" : ""}
                `}
-            >
-              <i className="nf nf-dev-facebook"></i>
-              <i className="nf nf-md-instagram"></i>
-              <i className="nf nf-dev-twitter"></i>
-            </div>
+              >
+                <i className="nf nf-dev-facebook"></i>
+                <i className="nf nf-md-instagram"></i>
+                <i className="nf nf-dev-twitter"></i>
+              </div>
 
-            <div className="toggle-social-media-icons">
-              <div className="icon">
-                {showShare ? (
-                  <CloseIcon
-                    className="green"
-                    onClick={() => setShowShare(false)}
-                  />
-                ) : (
-                  <ShareIcon onClick={() => setShowShare(true)} />
-                )}
+              <div className="toggle-social-media-icons">
+                <div className="icon">
+                  {showShare ? (
+                    <CloseIcon
+                      className="green"
+                      onClick={() => setShowShare(false)}
+                    />
+                  ) : (
+                    <ShareIcon onClick={() => setShowShare(true)} />
+                  )}
+                </div>
               </div>
             </div>
           </div>

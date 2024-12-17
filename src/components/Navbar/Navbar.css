@@ -6,20 +6,17 @@
 
 .Navbar {
   /* background-color: black; */
+  width: 100%;
   position: fixed;
-  background: repeating-linear-gradient(
-    135deg,
-    /* Angle of the stripes */ #222 0%,
-    /* Darker shade */ #222 5px,
-    /* Darker shade width */ #2a2a2a 8px,
-    /* Lighter shade starts */ #2a2a2a 10px /* Total stripe width */
-  );
+  background-color: transparent;
   background-size: cover;
   height: 100px;
   align-content: center;
-  position: sticky;
   top: 0;
+  /* padding: 20px; */
+
   /* border: 2px solid yellow; */
+  display: flex;
 }
 .navbar-container {
 
@@ -29,6 +26,7 @@
 }
 .nav-items{
     display: flex;
+    gap: 10px;
 }
 .nav-links {
   /* border: 2px solid green; */
@@ -47,8 +45,8 @@
 }
 
 .active {
-  color: green !important;
-  border-bottom: 2px solid green;
+  color: #27f026 !important;
+  border-bottom: 2px solid #27f026;
 }
 
 /* .nav-items a:hover {
@@ -74,7 +72,7 @@
   position: absolute;
   top: 50px;
   right: 0px;
-  background-color: green;
+  background-color: #27f026;
   padding: 4px;
   border-radius: 5px;
 }
@@ -136,4 +134,14 @@
     }
 
     
+}
+
+@media (max-width: 666px){
+  .Navbar{
+    height: 80px;
+    width: 100%;
+  }
+  .navbar-container {
+    width: 91%;
+  }
 }
